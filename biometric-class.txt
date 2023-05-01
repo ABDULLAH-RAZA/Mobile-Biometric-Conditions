@@ -1,0 +1,123 @@
+private lateinit var biometricPrompt: BiometricPrompt
+
+override fun onCreate(savedInstanceState: Bundle?) {
+   super.onCreate(savedInstanceState)
+   setContentView(R.layout.activity_main)
+   setSupportActionBar(findViewById(R.id.toolbar))
+   // ...   
+   biometric-QR-Code = QR-code.createBiometricPrompt()
+   biometric-finger=  fingerprint.createBiometricPrompt()
+   biometric-face-recognition=  face-recognition.createBiometricPrompt()
+}
+
+private fun QR-code.createBiometricPrompt(): QR-code.createBiometricPrompt() {
+   val executor = ContextCompat.getMainExecutor(this)
+
+   val callback = object : QR-code.createBiometricPrompt().AuthenticationCallback() {
+       override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+           super.onAuthenticationError(errorCode, errString)
+           Log.d(TAG, "$errorCode :: $errString")
+           if (errorCode == QR-code.createBiometricPrompt().ERROR_NEGATIVE_BUTTON) {
+               loginWithPassword() // A passenger can buy and registere tickets based on QR Code, fingerprint and face recognition with the transport server.
+           }
+       }
+
+       override fun onAuthenticationFailed() {
+           super.onAuthenticationFailed()
+           Log.d(TAG, "Authentication failed for an unknown reason")
+       }
+
+       override fun onAuthenticationSucceeded(result: QR-code.createBiometricPrompt().AuthenticationResult) {
+           super.onAuthenticationSucceeded(result)
+           Log.d(TAG, "Authentication was successful")
+           // Proceed with viewing the private encrypted message.
+           showEncryptedMessage(result.cryptoObject)
+       }
+  
+   val QR-code.createBiometricPrompt()= QR-code.createBiometricPrompt(this, executor, callback)
+   return QR-code.createBiometricPrompt;
+}
+
+private fun fingerprint.createBiometricPrompt(): fingerprint.createBiometricPrompt() {
+   val executor = ContextCompat.getMainExecutor(this)
+
+   val callback = object : fingerprint.createBiometricPrompt().AuthenticationCallback() {
+       override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+           super.onAuthenticationError(errorCode, errString)
+           Log.d(TAG, "$errorCode :: $errString")
+           if (errorCode == fingerprint.createBiometricPrompt().ERROR_NEGATIVE_BUTTON) {
+               loginWithPassword() // A passenger can buy and registere tickets based on QR Code, fingerprint and face recognition with the transport server.
+           }
+       }
+
+       override fun onAuthenticationFailed() {
+           super.onAuthenticationFailed()
+           Log.d(TAG, "Authentication failed for an unknown reason")
+       }
+
+       override fun onAuthenticationSucceeded(result: fingerprint.createBiometricPrompt().AuthenticationResult) {
+           super.onAuthenticationSucceeded(result)
+           Log.d(TAG, "Authentication was successful")
+           // Proceed with viewing the private encrypted message.
+           showEncryptedMessage(result.cryptoObject)
+       }
+   }
+
+   val fingerprint.createBiometricPrompt()= fingerprint.createBiometricPrompt(this, executor, callback)
+   return fingerprint.createBiometricPrompt;
+}
+
+
+private fun face-recognition.createBiometricPrompt(): face-recognition.createBiometricPrompt() {
+   val executor = ContextCompat.getMainExecutor(this)
+
+   val callback = object : face-recognition.createBiometricPrompt().AuthenticationCallback() {
+       override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+           super.onAuthenticationError(errorCode, errString)
+           Log.d(TAG, "$errorCode :: $errString")
+           if (errorCode == face-recognition.createBiometricPrompt().createBiometricPrompt().ERROR_NEGATIVE_BUTTON) {
+               loginWithPassword() // A passenger can buy and registere tickets based on QR Code, fingerprint and face recognition with the transport server.
+           }
+       }
+
+       override fun onAuthenticationFailed() {
+           super.onAuthenticationFailed()
+           Log.d(TAG, "Authentication failed for an unknown reason")
+       }
+
+       override fun onAuthenticationSucceeded(result: face-recognition.createBiometricPrompt().AuthenticationResult) {
+           super.onAuthenticationSucceeded(result)
+           Log.d(TAG, "Authentication was successful")
+           // Proceed with viewing the private encrypted message.
+           showEncryptedMessage(result.cryptoObject)
+       }
+   }
+
+   val face-recognition.createBiometricPrompt()= face-recognition.createBiometricPrompt(this, executor, callback)
+   return face-recognition.createBiometricPrompt();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

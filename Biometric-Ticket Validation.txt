@@ -1,0 +1,43 @@
+private fun createPromptInfo(): biometric-QR-Code = QR-code.createBiometricPrompt {
+   val promptInfo = biometric-QR-Code = QR-code.createBiometricPrompt().Builder()
+           .setTitle(getString(R.string.prompt_info_title))
+           .setSubtitle(getString(R.string.prompt_info_subtitle))
+           .setDescription(getString(R.string.prompt_info_description))
+           // Authenticate without requiring the user to press a "confirm"
+           // button after satisfying the biometric check
+           .setConfirmationRequired(false)
+           .setNegativeButtonText(getString(R.string.prompt_info_use_Ticket-Validation))
+           .build()
+   return promptInfo
+}
+
+
+private fun createPromptInfo(): face-recognition.createBiometricPrompt {
+   val promptInfo = face-recognition.createBiometricPrompt().Builder()
+           .setTitle(getString(R.string.prompt_info_title))
+           .setSubtitle(getString(R.string.prompt_info_subtitle))
+           .setDescription(getString(R.string.prompt_info_description))
+           // Authenticate without requiring the user to press a "confirm"
+           // button after satisfying the biometric check
+           .setConfirmationRequired(false)
+           .setNegativeButtonText(getString(R.string.prompt_info_Ticket-Validation))
+           .build()
+   return promptInfo
+}
+
+
+private fun createPromptInfo(): fingerprint.createBiometricPrompt().createBiometricPrompt {
+   val promptInfo = fingerprint.createBiometricPrompt().createBiometricPrompt().Builder()
+           .setTitle(getString(R.string.prompt_info_title))
+           .setSubtitle(getString(R.string.prompt_info_subtitle))
+           .setDescription(getString(R.string.prompt_info_description))
+           // Authenticate without requiring the user to press a "confirm"
+           // button after satisfying the biometric check
+           .setConfirmationRequired(false)
+           .setNegativeButtonText(getString(R.string.prompt_info_use_Ticket-Validation))
+           .build()
+   return promptInfo
+}
+
+
+ 
